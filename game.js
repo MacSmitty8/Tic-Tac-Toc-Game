@@ -40,14 +40,15 @@ function setGame() {
 function setBox() {
     if (gameOver) {
         return;
+        //this part makes the boxes un-clickable once the game ends. Otherwise they are clickable.
     }
-    let coords = this.id.split("-")
-    let r = parseInt(coords[0]);
-    let c = parseInt(coords[1]);
+    let tiles = this.id.split("-")
+    let r = parseInt(tiles[0]);
+    let c = parseInt(tiles[1]);
 
     if (board[r][c] != ' ') {
         return;
-    }
+    } //This is responsible for making sure that once the boxes have been filled with either an X or an O they can't alternate between the two if clicked again.
     board[r][c] = startPlayer;
     this.innerText = startPlayer;
 
@@ -56,17 +57,53 @@ function setBox() {
     } else {
         startPlayer = playerO;
     }
+    checkWinner()
 }
 
-function scoreTracker(){
-//this function will keep track of the score of how many wins a player has receieved
+function scoreTracker() {
+    //this function will keep track of the score of how many wins a player has received
 }
 
-function restart(){
-//this function will reset the entire game. Both the board, and the score.
+function restart() {
+    //this function will reset the entire game. Both the board, and the score.
 }
 
-function rounds(){
+function rounds() {
 
 
 }
+
+function checkWinner() {
+    //checks to see if there's three matching X's or )'s horizontally
+    for (let r = 0; r < 3; r++) {
+        if (board[r][0] == board[r][1] && board[r][1] == board[r][2] && board[r][0] != ' ') {
+            for (let i = 0; i < 3; i++) {
+                let boxes = document.getElementById(r.toString() + "-" + i.toString());
+                boxes.classList.add("winner");
+            }
+            gameOver = true;
+            return;
+        }
+    }
+    //Checks to see if there's three matches vertically
+    for (let c = 0; c < 3; c++) {
+        if (board[c][0] == board[c][1] && board[c][1] == board[c][2] && board[c][0] != ' ') {
+            for (let i = 0; i < 3; i++) {
+                let boxes = document.getElementById(r.toString() + "-" + c.toString());
+                boxes.classList.add("winner");
+            }
+            gameOver = true;
+            return;
+        }
+    }
+    //Checks to see if there's any wins diagonally
+    if (board[0][0] == board[1][1] && board[1][1] == board[2][2] && board[0][0] != ' ') {
+        for (let i = 0; i < 3; i++) {
+            let boxes = document.getElementById(i.toString() + "-" + c.toString());
+            boxes.classList.add("winner");
+        }
+        gameOver = true;
+        return;
+    }
+}
+

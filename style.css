@@ -33,6 +33,12 @@ hr{
 .v-line {
     border-right: 3px solid black;
 }
+
+.winner{
+    background-color: green;
+    color:white;
+}
+
 .p1-winCounter{
 border:solid 2px black;
 height: 100px;
