@@ -1,0 +1,51 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align:center;
+}
+
+hr{
+    width: 500px;
+    height: 3px;
+    background-color:black;
+}
+
+#board {
+    width:450px;
+    height:450px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.boxes {
+    width: 148px;
+    height: 147px;
+    font-size: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.h-line {
+    border-bottom: 3px solid black;
+}
+
+.v-line {
+    border-right: 3px solid black;
+}
+.p1-winCounter{
+border:solid 2px black;
+height: 100px;
+width: 100px;
+position: absolute;
+top: 100px;
+}
+
+.p2-winCounter{
+    border:solid 2px black;
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    top: 100px;
+    right: 100px;
+}
