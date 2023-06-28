@@ -88,6 +88,7 @@ function rounds() {
 
 function checkWinner() {
     //checks to see if there's three matching X's or O's horizontally
+    
     for (let r = 0; r < 3; r++) {
         if (board[r][0] == board[r][1] && board[r][1] == board[r][2] && board[r][0] != ' ') {
             for (let i = 0; i < 3; i++) {
@@ -125,6 +126,7 @@ function checkWinner() {
         gameOver = true;
         return;
     }
+    //Checks to see if there's three matches on the other side diagonally.
     if (board[0][2] == board[1][1] && board[1][1] == board[2][0] && board[0][2] != ' ') {
 
         let boxes = document.getElementById("0-2");
@@ -135,14 +137,13 @@ function checkWinner() {
 
         boxes = document.getElementById("2-0");
         boxes.classList.add("winner");
-        //Checks to see if there's three matches on the other side diagonally.
+        
         document.querySelector(".winnerMessage").innerHTML = `Player ${startPlayer} wins!`;
         console.log("Player", startPlayer, "Wins!");
         gameOver = true; 
         return;
-    } 
-
-
+    }
+checkTie();
 
 }
 
