@@ -55,3 +55,9 @@ top: 100px;
     top: 100px;
     right: 100px;
 }
+
+.winnerMessage{
+    font-size: 60px;
+    color: red;
+    
+}
