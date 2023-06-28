@@ -74,7 +74,7 @@ function rounds() {
 }
 
 function checkWinner() {
-    //checks to see if there's three matching X's or )'s horizontally
+    //checks to see if there's three matching X's or O's horizontally
     for (let r = 0; r < 3; r++) {
         if (board[r][0] == board[r][1] && board[r][1] == board[r][2] && board[r][0] != ' ') {
             for (let i = 0; i < 3; i++) {
@@ -87,9 +87,9 @@ function checkWinner() {
     }
     //Checks to see if there's three matches vertically
     for (let c = 0; c < 3; c++) {
-        if (board[c][0] == board[c][1] && board[c][1] == board[c][2] && board[c][0] != ' ') {
+        if (board[0][c] == board[1][c] && board[1][c] == board[2][c] && board[0][c] != ' ') {
             for (let i = 0; i < 3; i++) {
-                let boxes = document.getElementById(r.toString() + "-" + c.toString());
+                let boxes = document.getElementById(i.toString() + "-" + c.toString());
                 boxes.classList.add("winner");
             }
             gameOver = true;
@@ -99,11 +99,26 @@ function checkWinner() {
     //Checks to see if there's any wins diagonally
     if (board[0][0] == board[1][1] && board[1][1] == board[2][2] && board[0][0] != ' ') {
         for (let i = 0; i < 3; i++) {
-            let boxes = document.getElementById(i.toString() + "-" + c.toString());
+            let boxes = document.getElementById(i.toString() + "-" + i.toString());
             boxes.classList.add("winner");
         }
         gameOver = true;
         return;
     }
+    if (board[0][2] == board[1][1] && board[1][1] == board[2][0] && board[0][2] != ' ') {
+
+        let boxes = document.getElementById("0-2");
+        boxes.classList.add("winner");
+
+        boxes = document.getElementById("1-1");
+        boxes.classList.add("winner");
+
+        boxes = document.getElementById("2-0");
+        boxes.classList.add("winner");
+        //Checks to see if there's three matches on the other side diagonally.
+        gameOver = true;
+        return;
+    }
 }
+
 
