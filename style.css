@@ -1,20 +1,24 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
-    text-align:center;
+    text-align: center;
+    background-color: #be2801;
+    color: #ffd3b1;
+    margin: 0 auto;
 }
 
-hr{
+hr {
     width: 500px;
     height: 3px;
-    background-color:black;
+    background-color: black;
 }
 
 #board {
-    width:450px;
-    height:450px;
+    width: 450px;
+    height: 450px;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
+    z-index: 10;
 }
 
 .boxes {
@@ -34,30 +38,53 @@ hr{
     border-right: 3px solid black;
 }
 
-.winner{
+.winner {
     background-color: green;
-    color:white;
+    color: white;
 }
 
-.p1-winCounter{
-border:solid 2px black;
-height: 100px;
-width: 100px;
-position: absolute;
-top: 100px;
-}
-
-.p2-winCounter{
-    border:solid 2px black;
-    height: 100px;
-    width: 100px;
-    position: absolute;
-    top: 100px;
-    right: 100px;
-}
-
-.winnerMessage{
-    font-size: 60px;
-    color: red;
+.p1-winCounter {
+    border: solid 2px black;
+    width: 147px;
+    height: 146px;
     
+}
+
+.p2-winCounter {
+    border: solid 2px black;
+    width: 147px;
+    height: 146px;
+}
+
+.winnerMessage {
+    font-size: 40px;
+    color: white;
+}
+
+.p1-score {
+    height: 147px;
+    width: 146px;
+}
+
+.p2-score {
+    height: 147px;
+    width: 146px;
+}
+
+.scoreboard {
+    width: 100%;
+    height: 146px;
+    position: relative;
+    left: auto;
+    justify-content: space-between;
+    display: inline-flex;
+}
+
+.container{
+    margin: 0 auto;
+    position: relative;
+    align-items: center;
+    background-color: #be2801;
+    color: #ffd3b1;
+    text-shadow: 1px 1px 2px black, 0 0 3em black, 0 0 0.2em black;
 }

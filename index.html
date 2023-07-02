@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,20 +8,40 @@
     <link rel="stylesheet" href="style.css">
     <script src="game.js"></script>
 </head>
+
 <body>
+    <div class="container">
     <h1>Tic Tac Toe!</h1>
-    <button id="restartBtn"onclick="restart()">Restart</button>
-    <hr>
-    <br>
-
-    <div id="board"></div>
-
-    <div class="p1-winCounter">
-        Player O Wins: 0
+    <div class="buttons"> <button id="restartBtn" onclick="restart()">Restart</button> 
+        <button id="resetBoard" onclick="eraseBoardVisual()">Reset Board</button>
     </div>
-    <div class="p2-winCounter">
-        Player X Wins: 0
+    <div class="scoreboard">
+        <div class="p1-winCounter">
+            Player O Wins: 0
+
+            <div class="p1-score">
+
+            </div>
+        </div>
+        <div class="p2-winCounter">
+            Player X Wins: 0
+            <div class="p2-score">
+
+            </div>
+        </div>
     </div>
-    <div class="winnerMessage">This is where the win message will go</div>
+
+       
+        <hr>
+        <br>
+
+        <div id="board"></div>
+
+
+
+
+        <div class="winnerMessage">This is where the win message will go</div>
+    </div>
 </body>
+
 </html>
