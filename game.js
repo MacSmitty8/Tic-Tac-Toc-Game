@@ -78,6 +78,7 @@ function setGame() {
 function resetBoard() {
     //Completely clears the board
     const newBoard = document.getElementById("board");
+    debugger;
     console.log(newBoard.firstChild);
 
     // const boardRE = document.getElementById("board")
@@ -109,9 +110,11 @@ function eraseBoardVisual() {
             console.log(r)
             console.log(c)
             let tempBox = document.getElementById(`${r}-${c}`);
-            tempBox.innerText = '';
+            tempBox.innerText = ' ';
             debugger;
             tempBox.classList.remove(".winner");
+            tempBox.style.background = 'none';
+
             //document.getElementById(".winner").style.removeProperty("background-color");
         }
     }
