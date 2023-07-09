@@ -111,7 +111,6 @@ function eraseBoardVisual() {
             console.log(c)
             let tempBox = document.getElementById(`${r}-${c}`);
             tempBox.innerText = ' ';
-            debugger;
             tempBox.classList.remove(".winner");
             tempBox.style.background = 'none';
 
